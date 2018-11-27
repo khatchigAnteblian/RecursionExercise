@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package recursion;
+//package recursion;
 import java.util.Scanner;
 
 /**
@@ -19,35 +19,44 @@ public class Recursion {
         Scanner sc = new Scanner(System.in);
         
         // Question 1
-//        System.out.print("Enter X: ");
-//        int x = sc.nextInt();
-//        System.out.print("Enter N: ");
-//        int exp = sc.nextInt();
-//        System.out.println(exponent(x, exp));
-//        
-//        // Question 2
-//        System.out.print("Enter M: ");
-//        int m = sc.nextInt();
-//        System.out.print("Enter N: ");
-//        int n = sc.nextInt();
-//        System.out.println(gcd(m, n));
-//        
-//        // Question 3
-//        System.out.print("Enter an integer: ");
-//        int i = sc.nextInt();
-//        System.out.println(square(i));
-//        
-//        // Question 4
-//        System.out.print("Enter an integer: ");
-//        int j = sc.nextInt();
-//        System.out.println(prime(j, j-1));
-//        
-//        // Question 5
-//        System.out.print("Enter an integer: ");
-//        int num = sc.nextInt();
-//        System.out.println(digitSum(num));
+        System.out.println("Exponent");
+        System.out.print("Enter X: ");
+        int x = sc.nextInt();
+        System.out.print("Enter N: ");
+        int exp = sc.nextInt();
+        System.out.println(exponent(x, exp));
+        
+        // Question 2
+        System.out.println("\nGreatest common denominator");
+        System.out.print("Enter M: ");
+        int m = sc.nextInt();
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        System.out.println(gcd(m, n));
+        
+        // Question 3
+        System.out.println("\nSquare");
+        System.out.print("Enter an integer: ");
+        int i = sc.nextInt();
+        System.out.println(square(i));
+        
+        // Question 4
+        System.out.println("\nPrime");
+        System.out.print("Enter an integer: ");
+        int j = sc.nextInt();
+        System.out.println(prime(j, j-1));
+        
+        // Question 5
+        System.out.println("\nDigit Sum");
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+        System.out.println(digitSum(num));
         
         // Question 6
+        System.out.println("\nN Triangle");
+        System.out.print("Enter an integer: ");
+        int k = sc.nextInt();
+        nTriangle(k, k, '*');
     }
     
     // 1) X to the power of n recursively
@@ -108,10 +117,16 @@ public class Recursion {
     }
     
     // 6) N Triangle
-//    public static int nTriangle(int n, int k) {
-//        if (n < 1) {
-//            return 0;
-//        }
-//        System.out.print()
-//    }
+    public static int nTriangle(int n, int max, char chr) {
+        // Base case
+        if (n == 0) {
+            return 0;
+        }
+        // Subtract from max, which stays the same as a reference variable
+        for (int i=0; i<=max - n; i++) {
+            System.out.print(chr);
+        }
+        System.out.println();
+        return nTriangle(n - 1, max, chr);
+    }
 }
